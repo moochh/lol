@@ -1,20 +1,34 @@
-function calc() {
-  var entry = document.getElementById("entry").value
-  var stopLoss = document.getElementById("stopLoss").value
-  var accountCapital = document.getElementById("accountCapital").value
-  var riskPercentage = document.getElementById("riskPercentage").value
+var entryInput = document.getElementById("entry")
+var stopLossInput = document.getElementById("stopLoss")
+var riskAmountInput = document.getElementById("riskAmount")
 
-  if (riskPercentage == "") {
-    var risk = 5
-  } else {
-    var risk = accountCapital * riskPercentage / 100;
+entryInput.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    calc()
   }
+});
 
-  var quantity = Math.abs(risk/(entry-stopLoss))
-  var leverage = quantity*entry/risk/3
+stopLossInput.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    calc()
+  }
+});
 
-  document.getElementById("quantity").innerHTML = "Quantity: " + quantity.toFixed(3)
-  document.getElementById("leverage").innerHTML = "Leverage: " + leverage.toFixed(1) + "x"
+riskAmountInput.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    calc()
+  }
+});
+
+function calc() {
+  var entry = entryInput.value
+  var stopLoss = stopLossInput.value
+  var riskAmount = riskAmountInput.value
+
+  var quantity = Math.abs(riskAmount/(entry-stopLoss))
+
+  document.getElementById("quantity").innerHTML = quantity.toFixed(3)
 }
-
-

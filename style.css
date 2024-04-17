@@ -1,0 +1,186 @@
+:root {
+  font-family: "Poppins";
+  --bg: #ecf0f3;
+  --primary: #0045c5;
+  --body: #4b7ba4;
+  --light: #bdbdbd;
+  color: var(--body);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  height: 100vh;
+  width: 100%;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+h1 {
+  color: var(--primary);
+  margin-bottom: 3rem;
+  font-weight: 600;
+  font-size: 1.7em;
+}
+
+h4 {
+  margin: 0;
+  color: black;
+  font-weight: 600;
+}
+
+input {
+  border: none;
+  background-color: transparent;
+  font-size: 2em;
+  font-family: "Poppins";
+  border-bottom: 1px solid var(--light);
+  color: var(--primary);
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+  width: 100%;
+}
+
+input::placeholder {
+  color: var(--light);
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--primary);
+}
+
+input:focus + span {
+  color: var(--primary);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inputBox {
+  position: relative;
+  margin-right: 10rem;
+}
+
+span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateY(-5px);
+  color: var(--light);
+  transition: 0.3s ease-in-out;
+}
+
+.inputContainer {
+  width: 50%;
+  padding: 10rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 2em;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.outputContainer {
+  width: 50%;
+  margin-left: -5rem;
+  position: relative;
+}
+
+.quantityContainer {
+  width: 50%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5rem;
+  position: relative;
+}
+
+.inputElement {
+  margin-bottom: 2rem;
+}
+
+button {
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-5rem) translateX(-50%) translateY(50%);
+}
+
+@media (max-width:480px) {
+  body {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h4 {
+    font-size: 1em;
+  }
+
+  input {
+    font-size: 1.7em;
+  }
+
+  .inputContainer {
+    width: auto;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+
+  .inputBox {
+    position: relative;
+    margin-right: 0;
+  }
+
+  .outputContainer {
+    width: 100%;
+    margin: 0;
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .quantityContainer {
+    width: auto;
+    background-color: white;
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem;
+    position: relative;
+  }
+
+  button {
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem 1.5rem;
+    width: auto;
+    margin: 2rem;
+    border-radius: 10px;
+    position: static;
+    transform: translateX(0) translateX(0%) translateY(0);
+  }
+}
